@@ -12,7 +12,34 @@ class SettingsScreen extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
-            ListTile(),
+            ListTile(
+              title: const Text(settingsAutoLogin),
+              trailing: Switch(
+                value: true,
+                onChanged: (changed) {},
+              ),
+            ),
+            ListTile(
+              title: const Text(settingsPushNotification),
+              trailing: Switch(
+                value: true,
+                onChanged: (changed) {},
+              ),
+            ),
+            ListTile(
+              title: const Text(settingsSMSNotification),
+              trailing: Switch(
+                value: true,
+                onChanged: (changed) {},
+              ),
+            ),
+            ListTile(
+              title: const Text('$settingsCurrentVersion 0.1'),
+              trailing: IconButton(
+                icon: const Icon(Icons.download),
+                onPressed: () {},
+              ),
+            ),
           ],
         ),
       ),
