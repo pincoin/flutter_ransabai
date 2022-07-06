@@ -68,7 +68,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   void _notificationHandler(BuildContext context) {
     Navigator.push(context, MaterialPageRoute(builder: (_) {
-      return const NotificationScreen();
+      return NotificationScreen();
     }));
   }
 
