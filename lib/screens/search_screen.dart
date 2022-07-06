@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../utils/geo_location.dart';
+
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
 
@@ -13,10 +15,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final Completer<GoogleMapController> _controller = Completer();
 
-  final CameraPosition _kGooglePlex = const CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
-  );
+  late CameraPosition cameraPosition;
 
   void _onMapCreated(GoogleMapController controller) {
     _controller.complete(controller);
@@ -24,11 +23,34 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: GoogleMap(
-        initialCameraPosition: _kGooglePlex,
-        onMapCreated: _onMapCreated,
-      ),
+    return FutureBuilder(
+      future: GeoLocation.getLocation(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+
+        if (snapshot.hasData) {
+          cameraPosition = CameraPosition(
+            target: LatLng(snapshot.data.latitude, snapshot.data.longitude),
+            zoom: 18,
+          );
+        } else {
+          cameraPosition = const CameraPosition(
+            target: LatLng(13.736717, 100.523186),
+            zoom: 18,
+          );
+        }
+
+        return SafeArea(
+          child: GoogleMap(
+            initialCameraPosition: cameraPosition,
+            onMapCreated: _onMapCreated,
+          ),
+        );
+      },
     );
   }
 }
