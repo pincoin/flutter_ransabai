@@ -16,6 +16,10 @@ class _TabScreenState extends State<TabScreen> {
     AppBar(
       title: const Text(titleHome),
       centerTitle: true,
+      leading: IconButton(
+        icon: const Icon(Icons.notifications_outlined),
+        onPressed: () {},
+      ),
     ),
     AppBar(
       title: const Text(titleFavorite),
@@ -45,6 +49,16 @@ class _TabScreenState extends State<TabScreen> {
     AppBar(
       title: const Text(titleMyPage),
       centerTitle: true,
+      leading: IconButton(
+        icon: const Icon(Icons.notifications_outlined),
+        onPressed: () {},
+      ),
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.settings),
+          onPressed: () {},
+        )
+      ],
     ),
   ];
 
