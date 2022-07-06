@@ -24,16 +24,17 @@ class _TabScreenState extends State<TabScreen> {
     AppBar(
       title: const TextField(
         decoration: InputDecoration(
-            prefixIcon: Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-            hintText: titleSearch,
-            hintStyle: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-            ),
-            border: InputBorder.none),
+          prefixIcon: Icon(
+            Icons.search,
+            color: Colors.white,
+          ),
+          hintText: titleSearch,
+          hintStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+          border: UnderlineInputBorder(),
+        ),
       ),
       centerTitle: true,
     ),
@@ -64,13 +65,14 @@ class _TabScreenState extends State<TabScreen> {
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         currentIndex: currentIndex,
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
             label: titleHome,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.favorite_border_outlined),
             label: titleFavorite,
           ),
           BottomNavigationBarItem(
@@ -78,11 +80,11 @@ class _TabScreenState extends State<TabScreen> {
             label: titleSearch,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
+            icon: Icon(Icons.receipt_outlined),
             label: titleOrders,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.person_outline),
             label: titleMyPage,
           ),
         ],
