@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../common/constants.dart';
+import '../widgets/my_app_bar.dart';
 
 class TabScreen extends StatefulWidget {
   const TabScreen({Key? key}) : super(key: key);
@@ -12,60 +13,10 @@ class TabScreen extends StatefulWidget {
 class _TabScreenState extends State<TabScreen> {
   int currentIndex = 0;
 
-  final _appBars = [
-    AppBar(
-      title: const Text(titleHome),
-      centerTitle: true,
-      leading: IconButton(
-        icon: const Icon(Icons.notifications_outlined),
-        onPressed: () {},
-      ),
-    ),
-    AppBar(
-      title: const Text(titleFavorite),
-      centerTitle: true,
-    ),
-    AppBar(
-      title: const TextField(
-        decoration: InputDecoration(
-          prefixIcon: Icon(
-            Icons.search,
-            color: Colors.white,
-          ),
-          hintText: titleSearch,
-          hintStyle: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-          border: UnderlineInputBorder(),
-        ),
-      ),
-      centerTitle: true,
-    ),
-    AppBar(
-      title: const Text(titleOrders),
-      centerTitle: true,
-    ),
-    AppBar(
-      title: const Text(titleMyPage),
-      centerTitle: true,
-      leading: IconButton(
-        icon: const Icon(Icons.notifications_outlined),
-        onPressed: () {},
-      ),
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.settings),
-          onPressed: () {},
-        )
-      ],
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBars[currentIndex],
+      appBar: MyAppBar(currentIndex),
       body: Column(
         children: [
           Text('This is my text.'),

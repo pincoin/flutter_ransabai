@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import './screens/root_screen.dart';
+import '../common/app_theme.dart';
 import '../common/constants.dart';
-import 'common/app_theme.dart';
 
 void main() => runApp(const MyApp());
 
