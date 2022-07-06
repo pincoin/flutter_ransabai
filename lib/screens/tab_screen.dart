@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../common/constants.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class TabScreen extends StatefulWidget {
+  const TabScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<TabScreen> createState() => _TabScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _TabScreenState extends State<TabScreen> {
   int currentIndex = 0;
 
   final _appBars = [
