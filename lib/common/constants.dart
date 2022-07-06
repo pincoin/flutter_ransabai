@@ -1,7 +1,13 @@
 const appName = 'Ran Sabai';
 
-const gap_xs = 1;
-const gap_s = 2;
-const gap_m = 4;
-const gap_l = 8;
-const gap_xl = 10;
+const titleHome = 'Home';
+const titleFavorite = 'Favorite';
+const titleSearch = 'Search';
+const titleOrders = 'Orders';
+const titleMyPage = 'MyPage';
+
+const gapXS = 1;
+const gapS = 2;
+const gapM = 4;
+const gapL = 8;
+const gapXL = 10;

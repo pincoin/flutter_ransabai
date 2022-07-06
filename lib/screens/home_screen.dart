@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../common/constants.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -12,23 +14,35 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final _appBars = [
     AppBar(
-      title: const Text('Home'),
+      title: const Text(titleHome),
       centerTitle: true,
     ),
     AppBar(
-      title: const Text('Favorite'),
+      title: const Text(titleFavorite),
       centerTitle: true,
     ),
     AppBar(
-      title: const Text('Search'),
+      title: const TextField(
+        decoration: InputDecoration(
+            prefixIcon: Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            hintText: titleSearch,
+            hintStyle: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
+            border: InputBorder.none),
+      ),
       centerTitle: true,
     ),
     AppBar(
-      title: const Text('Orders'),
+      title: const Text(titleOrders),
       centerTitle: true,
     ),
     AppBar(
-      title: const Text('My Page'),
+      title: const Text(titleMyPage),
       centerTitle: true,
     ),
   ];
@@ -53,23 +67,23 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: titleHome,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Favorite',
+            label: titleFavorite,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Search',
+            label: titleSearch,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
-            label: 'Orders',
+            label: titleOrders,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'MyPage',
+            label: titleMyPage,
           ),
         ],
         onTap: (index) {
