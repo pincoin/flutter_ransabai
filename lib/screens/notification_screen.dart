@@ -9,6 +9,11 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text(titleNotifications)),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(),
+        ),
+      ),
     );
   }
 }

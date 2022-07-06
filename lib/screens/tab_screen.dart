@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ransabai/screens/search_screen.dart';
 
+import './favorite_screen.dart';
+import './home_screen.dart';
+import './my_page_screen.dart';
+import './order_screen.dart';
 import '../common/constants.dart';
 import '../widgets/my_app_bar.dart';
 
@@ -13,20 +18,19 @@ class TabScreen extends StatefulWidget {
 class _TabScreenState extends State<TabScreen> {
   int currentIndex = 0;
 
+  final _screens = [
+    const HomeScreen(),
+    const FavoriteScreen(),
+    const SearchScreen(),
+    const OrderScreen(),
+    const MyPageScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(currentIndex),
-      body: Column(
-        children: [
-          Text('This is my text.'),
-          Icon(Icons.login),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text('button'),
-          ),
-        ],
-      ),
+      body: _screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         currentIndex: currentIndex,

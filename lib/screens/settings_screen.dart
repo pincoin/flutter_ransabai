@@ -9,6 +9,13 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text(titleSettings)),
+      body: SafeArea(
+        child: ListView(
+          children: [
+            ListTile(),
+          ],
+        ),
+      ),
     );
   }
 }
