@@ -6,7 +6,7 @@ class AppTheme {
   static final Color _iconColor = Colors.grey.shade700;
   static final Color _lightPrimaryColor = Colors.brown.shade300;
   static final Color _lightOnPrimaryColor = Colors.brown.shade200;
-  static final Color _lightSecondaryColor = Colors.teal.shade700;
+  static final Color _lightSecondaryColor = Colors.amber.shade400;
   static final Color _lightErrorColor = Colors.pink.shade700;
 
   static final ThemeData lightTheme = ThemeData(
