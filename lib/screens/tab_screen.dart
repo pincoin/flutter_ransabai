@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ransabai/screens/search_screen.dart';
+import 'package:flutter_ransabai/widgets/new_booking_button.dart';
 
 import './favorite_screen.dart';
 import './home_screen.dart';
@@ -26,11 +27,16 @@ class _TabScreenState extends State<TabScreen> {
     const MyPageScreen(),
   ];
 
+  final _floatingActionButtons = [0, 1, 2, 3];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MyAppBar(currentIndex),
       body: _screens[currentIndex],
+      floatingActionButton: _floatingActionButtons.contains(currentIndex)
+          ? const NewBookingButton()
+          : null,
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         currentIndex: currentIndex,

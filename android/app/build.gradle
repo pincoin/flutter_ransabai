@@ -30,7 +30,7 @@ properties.load(project.rootProject.file('local.properties').newDataInputStream(
 def googleMapsApiKey = properties.getProperty('google.maps.apiKey')
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
     compileOptions {
